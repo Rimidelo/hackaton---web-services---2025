@@ -1,16 +1,15 @@
-// routes/gameRoutes.js
 const express = require('express');
 const router = express.Router();
 const { authenticateToken } = require('../middleware/auth-middleware.js');
 const {
     saveGameResults,
     getLeaderboard
-} = require('../controllers/gameController');
+} = require('../controllers/game-controller');
 
-// Save game results (POST /api/games)
-router.post('/games', authenticateToken, saveGameResults);
+// Save game results
+router.post('/', authenticateToken, saveGameResults);
 
-// Get leaderboard (GET /api/leaderboard/:difficulty)
+// Get leaderboard 
 router.get('/leaderboard/:difficulty', getLeaderboard);
 
 module.exports = router;
