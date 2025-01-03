@@ -1,0 +1,35 @@
+<!-- leaderboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="leaderboard-container">
+        <div class="leaderboard-header">
+            <h1>LEADERBOARD</h1>
+            <p>Top 5 Winners</p>
+        </div>
+
+        <div class="difficulty-tabs">
+            <button class="tab active" data-difficulty="easy">Easy</button>
+            <button class="tab" data-difficulty="medium">Medium</button>
+            <button class="tab" data-difficulty="hard">Hard</button>
+        </div>
+
+        <ul class="leaderboard-list" id="leaderboardList">
+            <!-- Will be populated by JavaScript -->
+        </ul>
+
+        <div class="navigation">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+            <a href="profile.html" class="nav-item">Profile</a>
+        </div>
+    </div>
+    <script src="leaderboard.js"></script>
+</body>
+</html>
