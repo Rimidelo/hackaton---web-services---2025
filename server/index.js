@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 
-
+//imports
 // import studentRoutes from './routers/student_routes.js';
 // import staffRoutes from './routers/staff_routes.js';
 
@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
+//routes
 // app.use('/api/auth', authRoutes);
 // app.use('/api/courses', courseRoutes);
 
