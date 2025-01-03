@@ -1,48 +1,37 @@
-// server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const { User, Game } = require('./models');
 const dotenv = require('dotenv');
 
+// Load environment variables from .env file
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const DB_HOST = process.env.DB_HOST;
+
+// Destructure env variables
+const { PORT = 3000, DB_HOST } = process.env;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// Database connection
-mongoose.connect(DB_HOST, {
-})
-.then(() => console.log('Connected to MongoDB'))
-.catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB
+mongoose
+  .connect(DB_HOST, {
+  })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
-// Authentication Middleware
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+const authRoutes = require('./routers/auth-routes.js');
+const userRoutes = require('./routers/profile-routes.js');
+const gameRoutes = require('./routers/game-routes.js');
 
-  if (!token) {
-    return res.status(401).json({ message: 'Authentication required' });
-  }
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/games', gameRoutes);
 
-  jwt.verify(token, JWT_SECRET, (err, user) => {
-    if (err) {
-      return res.status(403).json({ message: 'Invalid or expired token' });
-    }
-    req.user = user;
-    next();
-  });
-};
-
-// Routes will be added here...
-
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
