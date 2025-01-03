@@ -5,18 +5,20 @@ const cors = require('cors');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { User, Game } = require('./models');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const DB_HOST = process.env.DB_HOST;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
 // Database connection
-mongoose.connect('mongodb://localhost/trivia_game', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose.connect(DB_HOST, {
 })
 .then(() => console.log('Connected to MongoDB'))
 .catch(err => console.error('MongoDB connection error:', err));
