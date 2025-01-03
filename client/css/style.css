@@ -83,3 +83,167 @@ body {
 .sign-up {
     margin-bottom: 15px;
 }
+
+/* Profile styles */
+.profile-container {
+    width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(40, 35, 50, 0.9);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile-header h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.profile-header p {
+    color: #888;
+}
+
+.games-history {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.games-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.games-table th {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #ff69b4;
+}
+
+.games-table td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    color: #ffffff;
+}
+
+.total-score {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.score-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.score-item .difficulty {
+    color: #ff69b4;
+}
+
+/* Leaderboard styles */
+.leaderboard-container {
+    width: 360px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(40, 35, 50, 0.9);
+    min-height: 100vh;
+}
+
+.leaderboard-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.difficulty-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 8px 16px;
+    border: 2px solid #ff69b4;
+    border-radius: 20px;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tab.active {
+    background-color: #ff69b4;
+}
+
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+}
+
+.leaderboard-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #ff69b4;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.rank {
+    width: 30px;
+    font-weight: bold;
+}
+
+.player-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.player-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.score {
+    font-weight: bold;
+}
+
+/* Navigation Bar */
+.navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.nav-item {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
